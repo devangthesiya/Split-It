@@ -9,9 +9,7 @@ import { GroupDetailsScreen } from '../screens/GroupDetailsScreen';
 import { AddExpenseScreen } from '../screens/AddExpenseScreen';
 import { theme } from '../styles/theme';
 import { TabParamList, RootStackParamList } from '../types/navigation';
-import { TouchableOpacity, Text } from 'react-native';
-import Group from '../assets/icons/ic_group.svg';
-import Summary from '../assets/icons/ic_summary.svg';
+import { TouchableOpacity, Text, Platform } from 'react-native';
 
 const Tab = createBottomTabNavigator<TabParamList>();
 const Stack = createStackNavigator<RootStackParamList>();
@@ -25,10 +23,7 @@ const TabNavigator = () => {
           backgroundColor: theme.colors.background,
           borderTopColor: theme.colors.border,
           borderTopWidth: 1,
-          paddingBottom: 8,
-          paddingTop: 8,
-          height: 60,
-           
+          height: Platform.OS === 'ios' ? 50 : 60,           
         },
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.textSecondary,
