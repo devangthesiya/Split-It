@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Alert,
   SafeAreaView,
+  TextInput,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -108,21 +109,24 @@ export const CreateGroupScreen: React.FC = () => {
           </Text>
 
           <View style={styles.addParticipantContainer}>
-            <NeonInput
-              label="Participant Name"
-              value={newParticipantName}
-              onChangeText={setNewParticipantName}
-              placeholder="Enter participant name"
-              variant="secondary"
-              style={styles.participantInput}
-            />
-            <NeonButton
-              title="Add"
-              onPress={addParticipant}
-              variant="accent"
-              size="small"
-              style={styles.addButton}
-            />
+            <View style={styles.inputWithButton}>
+              <TextInput
+                style={styles.participantInput}
+                value={newParticipantName}
+                onChangeText={setNewParticipantName}
+                placeholder="Enter participant name"
+                placeholderTextColor={theme.colors.textMuted}
+                returnKeyType="done"
+                onSubmitEditing={addParticipant}
+              />
+              <TouchableOpacity
+                style={styles.addButtonModern}
+                onPress={addParticipant}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.addButtonText}>Add</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           {participants.map((participant) => (
@@ -193,17 +197,40 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.md,
   },
   addParticipantContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
     marginBottom: theme.spacing.md,
+  },
+  inputWithButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.borderRadius.md,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    paddingHorizontal: 4,
+    paddingVertical: 2,
   },
   participantInput: {
     flex: 1,
-    marginBottom: 0,
-    marginRight: theme.spacing.sm,
+    fontSize: 16,
+    paddingVertical: theme.spacing.sm,
+    paddingHorizontal: theme.spacing.md,
+    color: theme.colors.text,
+    backgroundColor: 'transparent',
+    borderWidth: 0,
   },
-  addButton: {
-    minWidth: 80,
+  addButtonModern: {
+    backgroundColor: theme.colors.secondary,
+    borderRadius: theme.borderRadius.md,
+    paddingHorizontal: theme.spacing.lg,
+    paddingVertical: theme.spacing.sm,
+    marginLeft: theme.spacing.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  addButtonText: {
+    color: theme.colors.background,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
   participantItem: {
     flexDirection: 'row',

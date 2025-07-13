@@ -89,7 +89,10 @@ export const NeonButton: React.FC<NeonButtonProps> = ({
           {
             backgroundColor: disabled ? theme.colors.surfaceSecondary : colors.bg,
             padding: sizeStyles.padding,
-            ...createGlowStyle(colors.glow, disabled ? 0 : 0.3),
+            // Remove or soften shadow for a flat look
+            ...(variant === 'primary' || variant === 'secondary'
+              ? { shadowColor: 'transparent', elevation: 0 }
+              : createGlowStyle(colors.glow, disabled ? 0 : 0.3)),
           },
           style,
         ]}
