@@ -1,7 +1,7 @@
 import { Group } from './index';
 
 export type RootStackParamList = {
-  Groups: undefined;
+  MainTabs: undefined;
   Summary: undefined;
   CreateGroup: undefined;
   GroupDetails: { group: Group };

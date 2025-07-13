@@ -60,7 +60,7 @@ const TabNavigator = () => {
 const BackButton = ({ navigation }: { navigation: any }) => (
   <TouchableOpacity
     style={{ marginLeft: 12, padding: 4 }}
-    onPress={() => navigation.navigate('Groups')}
+    onPress={() => navigation.navigate('MainTabs')}
   >
     <Text style={{ fontSize: 18, color: theme.colors.primary }}>{'← Back'}</Text>
   </TouchableOpacity>
@@ -74,7 +74,7 @@ export const AppNavigator = () => {
           headerShown: false,
           cardStyle: { backgroundColor: theme.colors.background },
         }}>
-        <Stack.Screen name="Groups" component={TabNavigator} />
+        <Stack.Screen name="MainTabs" component={TabNavigator} />
         <Stack.Screen name="Summary" component={TabNavigator} />
         <Stack.Screen
           name="CreateGroup"
