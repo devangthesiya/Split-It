@@ -1,79 +1,132 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Split It - Futuristic Expense Sharing App
 
-# Getting Started
+A React Native expense-sharing app with a futuristic, sci-fi inspired UI design. Built with TypeScript and featuring local storage for all data.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## 🚀 Features
 
-## Step 1: Start the Metro Server
+- **Dark Theme**: Beautiful dark interface with neon accents
+- **Group Management**: Create and manage expense groups
+- **Expense Tracking**: Add expenses with equal splitting
+- **Balance Calculation**: Automatic calculation of who owes whom
+- **Local Storage**: All data stored locally using AsyncStorage
+- **Futuristic UI**: Glowing effects, animations, and sci-fi styling
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## 🎨 Design
 
-To start Metro, run the following command from the _root_ of your React Native project:
+The app features a futuristic "robo movie" aesthetic with:
+- Dark background with neon green, blue, and pink accents
+- Glowing effects on buttons and cards
+- Smooth animations and transitions
+- Modern typography and spacing
 
-```bash
-# using npm
-npm start
+## 📱 Screens
 
-# OR using Yarn
-yarn start
+### Groups Tab
+- List of all expense groups
+- Floating "Create Group" button
+- Group details with total expenses and member count
+
+### Create Group Screen
+- Group name input
+- Add/remove participants
+- Validation for minimum 2 participants
+
+### Group Details Screen
+- List of all expenses in the group
+- Running balance showing who owes whom
+- "Add Expense" button
+- Statistics (total expenses, per person share)
+
+### Add Expense Screen
+- Expense description and amount
+- Participant selection (who paid)
+- Equal split option
+- Form validation
+
+### Summary Tab
+- Overall balance across all groups
+- Total outstanding amounts
+- Active group count
+
+## 🛠 Tech Stack
+
+- **React Native** 0.76.9
+- **TypeScript**
+- **React Navigation** (Stack + Bottom Tabs)
+- **AsyncStorage** for local data persistence
+- **Custom Components** with futuristic styling
+
+## 📦 Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the app:
+   ```bash
+   # iOS
+   npm run ios
+   
+   # Android
+   npm run android
+   ```
+
+## 🏗 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── NeonButton.tsx  # Futuristic button component
+│   ├── NeonInput.tsx   # Styled input component
+│   └── NeonCard.tsx    # Card component with glow effects
+├── screens/            # App screens
+│   ├── GroupsScreen.tsx
+│   ├── SummaryScreen.tsx
+│   ├── CreateGroupScreen.tsx
+│   ├── GroupDetailsScreen.tsx
+│   └── AddExpenseScreen.tsx
+├── navigation/         # Navigation setup
+│   └── AppNavigator.tsx
+├── types/             # TypeScript type definitions
+│   ├── index.ts
+│   └── navigation.ts
+├── styles/            # Theme and styling
+│   └── theme.ts
+└── utils/             # Utility functions
+    ├── storage.ts     # AsyncStorage wrapper
+    └── balanceCalculator.ts
 ```
 
-## Step 2: Start your Application
+## 🎯 Key Features
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Data Management
+- All data stored locally using AsyncStorage
+- No authentication required
+- Automatic balance calculations
+- Real-time updates
 
-### For Android
+### UI/UX
+- Smooth animations and transitions
+- Glowing neon effects
+- Responsive design
+- Intuitive navigation
 
-```bash
-# using npm
-npm run android
+### Expense Logic
+- Equal splitting among all group members
+- Automatic balance calculation
+- Clear display of who owes whom
+- Support for multiple groups
 
-# OR using Yarn
-yarn android
-```
+## 🔮 Future Enhancements
 
-### For iOS
+- Custom split percentages
+- Expense categories
+- Export functionality
+- Cloud sync
+- Receipt photo capture
+- Payment integration
 
-```bash
-# using npm
-npm run ios
+## 📄 License
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is open source and available under the MIT License.
